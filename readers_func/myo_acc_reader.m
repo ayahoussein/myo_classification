@@ -11,7 +11,7 @@ acc_time_orig = (acc_time_orig-acc_time_orig(1))/10^3;
 
 if interpolation
     % Interpolate the signal to restore missing samples
-    [acc_time_int, acc_sig_int] = said_function(acc_time_orig, acc_sig_orig, 20);
+    [acc_time_int, acc_sig_int] = interpolate_missing_samples(acc_time_orig, acc_sig_orig, 20);
 else
     acc_time_int = (0:length(acc_time_orig)-1)*20;
     acc_sig_int = acc_sig_orig;

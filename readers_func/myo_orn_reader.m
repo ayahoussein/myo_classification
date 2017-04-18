@@ -11,7 +11,7 @@ orn_time_orig = (orn_time_orig-orn_time_orig(1))/10^3;
 
 if interpolation
     % Interpolate the signal to restore missing samples
-    [orn_time_int, orn_sig_int] = said_function(orn_time_orig, orn_sig_orig, 20);
+    [orn_time_int, orn_sig_int] = interpolate_missing_samples(orn_time_orig, orn_sig_orig, 20);
 else
     orn_time_int = (0:length(orn_time_orig)-1)*20;
     orn_sig_int = orn_sig_orig;
