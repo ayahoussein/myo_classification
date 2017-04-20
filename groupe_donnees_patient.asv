@@ -42,11 +42,11 @@ for patient = 1:(length(patientFolds))
             
              if patient==1
                 eval([ 'patient_' num2str(visit) ' = s ;' ]); % renameles differents signaux emg
-             else
-                 eval([ 'patient_' num2str(visit+sum(visits_n(1:(patient-1)))) ' = s;' ]);
+            else
+                eval([ 'patient_' num2str(visit+sum(visits_n(1:(patient-1)))) ' = s;' ]);
              end
              
-     else
+        else
             cd ..
             continue 
         end
@@ -60,6 +60,8 @@ end
 cd ..
 save('emg_global_finger','patient_*'); % sauvegarder les diff?rentes signaux emg et la varable du label dans un le fichier emg_global.mat
 
+
+   
 end
 
 
